@@ -1,24 +1,26 @@
 /* Basic reset and simple, clean layout */
 :root {
     --max-width: 900px;
-    --accent: #0a5a78;
-    --muted: #666;
-    --bg: #eef6fb; /* soft, neutral blue background */
+    --accent: #d6949d;
+    --link-hover: #e73d54;
+    --bg: #1e5570;
+    --text: #d1dde6;
+    --muted: #aeb9c0;
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%
+    height: 100%;
 }
 
 body {
     margin: 0;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    color: #111;
+    color: var(--text);
     background: var(--bg);
     line-height: 1.5;
 }
@@ -26,80 +28,89 @@ body {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 20px
+    padding: 20px;
 }
 
 .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .site-header {
     border-bottom: 1px solid #eee;
-    padding: 16px 0
+    padding: 16px 0;
 }
 
 .logo {
     width: 150px;
     height: 70px;
-    border: 2px dashed #ccc;
+    border: 2px dashed rgba(11,95,122,0.25);
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: 600;
-    color: #333
+    color: var(--text);
 }
 
 .logo-sub {
     display: block;
     font-size: 11px;
     color: var(--muted);
-    font-weight: 400
+    font-weight: 400;
 }
 
 .contact {
     text-align: right;
-    font-size: 14px
+    font-size: 14px;
 }
 
-.contact a {
+a {
     color: var(--accent);
-    text-decoration: none
+    text-decoration: none;
 }
+a:hover,
+a:focus {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
 
 h1 {
     font-size: 28px;
-    margin: 18px 0 8px
+    margin: 18px 0 8px;
+    color: var(--text);
 }
 
 h2 {
     font-size: 18px;
-    margin: 12px 0
+    margin: 12px 0;
+    color: var(--text);
 }
 
+
 .about p {
-    margin: 0 0 12px
+    margin: 0 0 12px;
 }
 
 .services ul {
     list-style: disc;
     margin: 0 0 16px 20px;
-    padding: 0
+    padding: 0;
 }
 
 .cta p {
-    margin: 6px 0
+    margin: 6px 0;
 }
 
 .site-footer {
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid rgba(6,38,46,0.06);
     padding: 12px 0;
     margin-top: 28px;
     color: var(--muted);
-    font-size: 14px
+    font-size: 14px;
 }
 
 /* Responsive adjustments */
@@ -107,22 +118,25 @@ h2 {
     .header-inner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px
+        gap: 12px;
     }
 
     .contact {
-        text-align: left
+        text-align: left;
     }
 
     .logo {
         width: 100%;
         height: auto;
-        padding: 12px
+        padding: 12px;
     }
 }
 
 /* Small accessibility touches */
 a:focus {
-    outline: 3px solid rgba(10, 90, 120, 0.12);
-    outline-offset: 2px
+    outline: 3px solid rgba(11,95,122,0.12);
+    outline-offset: 2px;
 }
+
+/* small visual polish for headings/links */
+h1,h2{line-height:1.15}
